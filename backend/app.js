@@ -1,7 +1,9 @@
 const express  = require('express');
 const app = express();
 const bookRoute = require("./routes/booksRoute");
+var cors = require('cors')
 
+app.use(cors()) // Use this after the variable declaration
 require("./connection/conn");
 
 //routes

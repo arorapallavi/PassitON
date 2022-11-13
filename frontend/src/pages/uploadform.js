@@ -54,7 +54,7 @@ const Uploadbook = () =>{
 			value = {Data.name}
 			onChange={change}
           ></textarea>
-          <button className="home-button button">Submit</button>
+          
           <label className="home-text02">Edition :&nbsp;</label>
           <input
             type="text"
@@ -94,14 +94,14 @@ const Uploadbook = () =>{
             <span>:&nbsp;</span>
           </label>
           <select className="home-select1" name="semester" value = {Data.semester} onChange={change}>
-            <option value="s1">1</option>
-            <option value="s2">2</option>
-            <option value="s3">3</option>
-            <option value="s4">4</option>
-            <option value="s5">5</option>
-            <option value="s6">6</option>
-            <option value="s7">7</option>
-            <option value="s8">8</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
           </select>
           <label className="home-text11">
             <span>Cost Price :&nbsp;</span>
@@ -146,6 +146,7 @@ const Uploadbook = () =>{
 			value = {Data.image}
 			onChange={change}
           />
+		 < button className="home-button button" value="Submit" onClick={submit}>Submit</button>
         </form>
 	);
 };
