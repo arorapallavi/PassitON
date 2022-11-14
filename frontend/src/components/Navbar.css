@@ -5,9 +5,11 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  margin-left: 400px	;
 }
 .navigation-links1-text {
   color: #CAE250;
+  margin-left: var(--dl-space-space-twounits);
 }
 .navigation-links1-text1 {
   color: #CAE250;
