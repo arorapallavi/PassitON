@@ -9,7 +9,7 @@ import Login from './pages/login';
 import Signup from './pages/signup';
 import BookDet from './pages/Book_details';
 
-
+import Cart from './pages/Cart';
 import {
   BrowserRouter as Router,   
   Routes, 
@@ -29,6 +29,7 @@ function App() {
 		<Route path="/uploadbook" element={<Uploadbook/>} />
 		<Route path="/display" element={<Displaybook/>}/>
 		<Route path="/display/book/:id" element={<BookDet/>}/>
+		<Route path="/cart" element={<Cart/>}
 		book/>} />		
 		
 	</Routes>
