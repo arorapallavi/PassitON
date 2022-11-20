@@ -24,15 +24,17 @@ const [Data,setData] = useState([
     image: ""
 	}]);
 	
-		useEffect(()=> {
+	
+			
+			console.log("in use effect")
 		console.log(bid)
 		fetch(`http://localhost:4000/api/display/${bid}`).then(res=>{
 			if(res.ok){
 				return res.json()
 			}
-		}).then(jsonRes=>console.log(jsonRes))
+		}).then(jsonRes=>setData(jsonRes))
 		
-	})
+	
 	console.log("data")
 	console.log(Data)
 	const submit = async(e)=>{

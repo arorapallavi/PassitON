@@ -33,6 +33,7 @@ router.get('/display', (req,res) => {
 
 router.get('/display/:id',async(req,res) =>{
 	let books;
+	const id=req.params.id;
 	try{
 		bookModel.findById(id).then(foundbook=>res.json(foundbook));
 	
