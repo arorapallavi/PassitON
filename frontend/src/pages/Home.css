@@ -1,0 +1,80 @@
+
+                    .b1{
+                        margin-left: 150px;
+                        height:45px;
+                        width:150px;
+                        background-color:#D9D9D9;
+                        color:#353535;
+                        padding-left:5px;
+                        padding-right:5px;
+                        padding-top:5px;
+                        padding-bottom:5px;
+                        font-size:30px;
+                        border-radius:10px;
+                        border: 1px solid #353535;
+                    }
+
+                    .b1:hover{
+                        cursor:pointer;
+                        background-color: #353535;
+                        color: #D9D9D9;
+                        opacity: 0.5;
+                    }
+
+                    .b1:active{
+                        opacity:0.3;
+                    }
+                    
+                    .b2{
+                        margin-left: 20px;
+                        height:45px;
+                        width:150px;
+                        background-color:#353535;
+                        color:#D9D9D9;
+                        padding-left:5px;
+                        padding-right:5px;
+                        padding-top:5px;
+                        padding-bottom:5px;
+                        font-size:30px;
+                        border-radius:10px;
+                        border: 1px solid #353535;
+
+                    }
+
+                    .b2:hover{
+                        cursor:pointer;
+                        background-color: #353535;
+                        color: #D9D9D9;
+                        opacity:0.5;                        
+                    }
+
+                    .b2:active{
+                        opacity:0.3;
+                    }
+
+                    hr{
+                        height: 3px;
+                        background-color: #284B63;
+                        border: none;
+                    }
+
+                    #div1
+                    {
+                        height: 60px;
+                    }
+
+                    .img1
+                    {
+                        height: 100px;
+                        margin-left: 1050px;
+                        margin-top: -100px;
+                    }
+                    .bg
+                    {
+                        background-image:url("./bg.jpeg");
+                        background-size:'cover';
+                        background-repeat:'no-repeat';
+                    
+                        background-size:1280px;
+                        height:650px;
+                    }

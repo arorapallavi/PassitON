@@ -2,8 +2,8 @@ import React from "react";
 import "./uploadform.css";
 import {useState} from "react"
 import axios from 'axios'
-
-const Uploadbook = () =>{
+import Navbar from "../components/Navbar";
+function Uploadform(){
 	
 	const [Data,setData] = useState(
 	{
@@ -17,16 +17,16 @@ const Uploadbook = () =>{
     isbn:0 ,
     image: ""
 		})
-	const change=(e)=>
-	{
-		const {name,value}=e.target
-		setData({...Data,[name]:value})
-	}
+		const change=(e)=>
+		{
+			const {name,value}=e.target
+			setData({...Data,[name]:value})
+		}
 	
 	const submit = async(e)=>{
 		e.preventDefault();
 		 await axios
-		 .post("http://localhost:4000/api/v1/upload",Data)
+		 .post("http://localhost:4000/api/upload",Data)
 		 .then((res) => console.log(res));
 		 setData(
 		 {
@@ -94,14 +94,14 @@ const Uploadbook = () =>{
             <span>:&nbsp;</span>
           </label>
           <select className="home-select1" name="semester" value = {Data.semester} onChange={change}>
-            <option value="s1">1</option>
-            <option value="s2">2</option>
-            <option value="s3">3</option>
-            <option value="s4">4</option>
-            <option value="s5">5</option>
-            <option value="s6">6</option>
-            <option value="s7">7</option>
-            <option value="s8">8</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
           </select>
           <label className="home-text11">
             <span>Cost Price :&nbsp;</span>
@@ -150,5 +150,16 @@ const Uploadbook = () =>{
         </form>
 	);
 };
+
+
+function Uploadbook()
+{
+	return(
+	<div>
+	<Navbar/>
+	<Uploadform/>
+	</div>
+	);
+}
 
 export default Uploadbook;

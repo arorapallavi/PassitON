@@ -1,0 +1,65 @@
+		.b4
+		{
+			margin-left: 20px;
+			height:45px;
+			width:150px;
+			background-color:#353535;
+			color:#D9D9D9;
+			padding-left:5px;
+			padding-right:5px;
+			padding-top:5px;
+			padding-bottom:5px;
+			font-size:30px;
+			border-radius:10px;
+			border: 1px solid #353535;
+		}
+		
+		.b4:hover
+		{
+			cursor:pointer;
+			background-color: #353535;
+			color: #D9D9D9;
+			opacity:0.5;
+		}
+		.b4:active
+		{
+			opacity:0.3;
+		}
+
+		.img4
+		{
+			height:500;
+		}
+		.op1
+		{
+			width: 300px;
+			height: 40px;
+			border-radius: 5px;
+			border: solid;
+			border-color: #284B63;
+			font-size: large;
+		}
+
+		.img1
+		{
+			height: 100px;
+			margin-left: 1050px;
+			margin-top: -100px;
+		}
+
+		hr
+		{
+			height: 5px;
+			background-color: #284B63;
+			border: none;
+		}
+
+		.tb2
+		{
+			width: 300px;
+			height: 40px;
+			border-radius: 5px;
+			border: solid;
+			border-color: #284B63;
+			font-size: large;
+		}

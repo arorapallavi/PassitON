@@ -1,0 +1,16 @@
+import React from "react";
+import "./uploadform.css";
+import {useState} from "react"
+import axios from 'axios'
+
+const BooksSection = {{data}} =>{
+	console.log(data);
+	
+	
+	
+	return(
+	<div className="d-flex-justify-content-center align-items-center"></div>
+	)
+	};
+
+export default BooksSection;

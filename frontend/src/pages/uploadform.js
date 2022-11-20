@@ -2,8 +2,8 @@ import React from "react";
 import "./uploadform.css";
 import {useState} from "react"
 import axios from 'axios'
-
-const Uploadbook = () =>{
+import Navbar from "../components/Navbar";
+function Uploadform(){
 	
 	const [Data,setData] = useState(
 	{
@@ -11,22 +11,20 @@ const Uploadbook = () =>{
     edition:0 ,
     author: "",
     condition: "",
-    semester:0 ,
     costprice:0 ,
     sellingprice:0,
-    isbn:0 ,
     image: ""
 		})
-	const change=(e)=>
-	{
-		const {name,value}=e.target
-		setData({...Data,[name]:value})
-	}
+		const change=(e)=>
+		{
+			const {name,value}=e.target
+			setData({...Data,[name]:value})
+		}
 	
 	const submit = async(e)=>{
 		e.preventDefault();
 		 await axios
-		 .post("http://localhost:4000/api/v1/upload",Data)
+		 .post("http://localhost:4000/api/upload",Data)
 		 .then((res) => console.log(res));
 		 setData(
 		 {
@@ -150,5 +148,16 @@ const Uploadbook = () =>{
         </form>
 	);
 };
+
+
+function Uploadbook()
+{
+	return(
+	<div>
+	<Navbar/>
+	<Uploadform/>
+	</div>
+	);
+}
 
 export default Uploadbook;
