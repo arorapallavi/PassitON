@@ -1,0 +1,24 @@
+.book-image
+{
+float: left;
+margin-left: 20px;
+margin-top: 5px;
+margin-bottom: 5px;
+margin-right: 100px ;
+border: solid black 2px;
+height: 500px;
+width: 500px;
+}
+.info{
+    float: left;
+    color: rgb(0, 0, 0);
+    font-size: larger;
+}
+.Tocart{
+    left: 115px;
+    color: #3C6E71;
+    bottom: 150px;
+    position: absolute;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}

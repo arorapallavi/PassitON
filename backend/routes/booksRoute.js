@@ -8,11 +8,13 @@ router.post('/upload',async(req,res)=>{
 		const data = req.body;
 		const newbook = new bookModel(data);
 		await newbook.save().then(()=>{
-			res.status(200).json({message:"Book added"});
+			var redir = { redirect: "/" };
+			return res.json(redir);
 		});
 		
  	}catch(error){
-		console.log(error);
+		var redir = { redirect: '/uploadbook'};
+        return res.json(redir);
 	}
 })
 

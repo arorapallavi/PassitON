@@ -25,7 +25,16 @@ function Uploadform(){
 		e.preventDefault();
 		 await axios
 		 .post("http://localhost:4000/api/upload",Data)
-		 .then((res) => console.log(res));
+		 .then(function (response) {
+            if (response.data.redirect == '/') {
+                window.location = "/display"
+            } else if (response.data.redirect == '/uploadbook'){
+                window.location = "/uploadbook"
+            }
+        })
+        .catch(function(error) {
+            window.location = "/login"
+        })
 		 setData(
 		 {
 			name: "",

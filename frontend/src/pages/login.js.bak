@@ -2,11 +2,14 @@ import React from 'react';
 import './login.css';
 import {Link} from "react-router-dom";
 import axios from 'axios' ;
+import { useNavigate } from 'react-router-dom';
 
 import {useState} from "react"
 const img1 = require('./pass_it_on.jpeg')
 const img2 = require('./img2.jpg')
+
 const Login = () => {
+	const navigate = useNavigate();
       	const [Data,setData] = useState( { 	Name: "",   Password:"" })
 		const change=(e)=>
 		{
@@ -19,14 +22,24 @@ const Login = () => {
                  e.preventDefault();
              await axios
              .post("http://localhost:4000/api/login",Data)
-             .then((res) => console.log(res));
+             .then(function (response) {
+            if (response.data.redirect == '/') {
+                window.location = "/index"
+            } else if (response.data.redirect == '/login'){
+                window.location = "/login"
+            }
+        })
+        .catch(function(error) {
+            window.location = "/login"
+        })
+			 
              setData(
              {
                 Name: "",
                 Password:"" 
     
             })
-			window.location.href='/api/display';
+			
                 }
 				 console.log(Data);  
         return(
@@ -37,7 +50,7 @@ const Login = () => {
                         <div style = {{backgroundColor:"#d9d9d9",marginLeft: 100}}>
                         <img className = "img2" align="right" src ={img2}/>
                         </div>
-                        <form style = {{color:'#353535',fontFamily: "cursive",fontSize: "x-large",marginLeft: 100}} method="POST" >
+                        <form style = {{color:'#353535',fontFamily: "cursive",fontSize: "x-large",marginLeft: 100}} method="POST">
                             <h3>Enter your username:<br/><input type = "textbox" id = "username" onChange={change} className="tb1" name = "Name" value={Data.Name}/></h3>
                             <h3>Enter password:<br/><input type = "password" id = "password" onChange={change} className="tb1" name = "Password" value = {Data.Password}/></h3>
                             <h3><button type = "submit" id = "mysubmit" onClick = {submit}  className="b3">Login</button></h3>

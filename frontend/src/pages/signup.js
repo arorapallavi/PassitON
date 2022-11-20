@@ -42,7 +42,16 @@ const Signup = () => {
             e.preventDefault();
              await axios
              .post("http://localhost:4000/api/signup",Data)
-             .then((res) => console.log(res));
+             .then(function (response) {
+            if (response.data.redirect == '/') {
+                window.location = "/display"
+            } else if (response.data.redirect == '/signup'){
+                window.location = "/signup"
+            }
+        })
+        .catch(function(error) {
+            window.location = "/login"
+        })
              setData(
              {
                 Name: "",

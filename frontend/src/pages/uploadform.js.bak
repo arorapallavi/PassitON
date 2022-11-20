@@ -11,10 +11,8 @@ function Uploadform(){
     edition:0 ,
     author: "",
     condition: "",
-    semester:0 ,
     costprice:0 ,
     sellingprice:0,
-    isbn:0 ,
     image: ""
 		})
 		const change=(e)=>

@@ -7,7 +7,7 @@ import Displaybook from "./pages/displaybooks.js";
 import Home from './pages/Home';
 import Login from './pages/login';	
 import Signup from './pages/signup';
-import Bookdetail from './pages/bookdetail';
+import BookDet from './pages/Books_detail';
 
 
 import {
@@ -28,7 +28,7 @@ function App() {
 		<Route path="/searchbook" element={<Searchbook/>} />
 		<Route path="/uploadbook" element={<Uploadbook/>} />
 		<Route path="/display" element={<Displaybook/>}/>
-		<Route path="/display/:id" element={<Bookdetail/>}/>
+		<Route path="/display/book/:id" element={<BookDet/>}/>
 		book/>} />		
 		
 	</Routes>

@@ -2,11 +2,14 @@ import React from 'react';
 import './login.css';
 import {Link} from "react-router-dom";
 import axios from 'axios' ;
+import { useNavigate } from 'react-router-dom';
 
 import {useState} from "react"
 const img1 = require('./pass_it_on.jpeg')
 const img2 = require('./img2.jpg')
+
 const Login = () => {
+	const navigate = useNavigate();
       	const [Data,setData] = useState( { 	Name: "",   Password:"" })
 		const change=(e)=>
 		{
@@ -19,13 +22,24 @@ const Login = () => {
                  e.preventDefault();
              await axios
              .post("http://localhost:4000/api/login",Data)
-             .then((res) => console.log(res));
+             .then(function (response) {
+            if (response.data.redirect == '/') {
+                window.location = "/display"
+            } else if (response.data.redirect == '/login'){
+                window.location = "/login"
+            }
+        })
+        .catch(function(error) {
+            window.location = "/login"
+        })
+			 
              setData(
              {
                 Name: "",
                 Password:"" 
     
             })
+			
                 }
 				 console.log(Data);  
         return(
