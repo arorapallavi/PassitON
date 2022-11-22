@@ -78,15 +78,16 @@ const [Data,setData] = useState([
             alt="image"
             className="book-image"/>
             <div className = "info">
-                <h3>Details</h3>
-                <p>Name : {Data.name}</p>
-                <p>Edition : {Data.edition} </p>
-                <p>Author : {Data.author}</p>
-                <p>Condition : {Data.condition}</p>
-                <p>Semester : {Data.semester}</p>
-				<p>Cost Price : {Data.costprice}</p>
-                <p>Selling Price : {Data.sellingprice}</p>
-                <p>ISBN : {Data.isbn}</p>
+
+
+                <p>Name: {Data.name}</p>
+                <p>Edition:{Data.edition} </p>
+                <p>Author:{Data.author}</p>
+                <p>Condition:{Data.condition}</p>
+                <p>Semester: {Data.semester}</p>
+                <p>Price:{Data.price}</p>
+                <p>ISBN:{Data.ISBN}</p>
+
             </div>  
             <button className="btn1" onClick={submit}>Add To Cart</button>  
 			<br/><Link to="/display"><button className="btn2"> Go back to display all books</button></Link>	

@@ -90,7 +90,6 @@ const [Data,setData] = useState([
             </div>  
             <button className="btn1" onClick={submit}>Add To Cart</button>  
 			<br/><Link to="/display"><button className="btn2"> Go back to display all books</button></Link>	
-			<br/><Link to="/display"><button onClick={del} className="btn3"> Delete book </button></Link>	
 	
         </div>
     )};
