@@ -85,8 +85,9 @@ const [Data,setData] = useState([
                 <p>Author:{Data.author}</p>
                 <p>Condition:{Data.condition}</p>
                 <p>Semester: {Data.semester}</p>
-                <p>Price:{Data.price}</p>
-                <p>ISBN:{Data.ISBN}</p>
+				<p>Cost Price : {Data.costprice}</p>
+                <p>Selling Price : {Data.sellingprice}</p>
+                <p>ISBN : {Data.isbn}</p>
 
             </div>  
             <button className="btn1" onClick={submit}>Add To Cart</button>  
