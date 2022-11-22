@@ -21,8 +21,8 @@ const NavigationLinks1 = (props) => {
           />
           <div className="home-container1">
             
-              <nav
-                className="navigation-links1-nav navigation-links1-root-className-name15"
+              <nav 
+			  className="navigation-links1-nav navigation-links1-root-className-name15"
               >
                 <Link className="navigation-links1-text" to="/uploadbook">
                   <span>SELL a Book</span>
@@ -30,13 +30,13 @@ const NavigationLinks1 = (props) => {
                 <Link className="navigation-links1-text1" to="/searchbook">
                   <span>SEARCH a Book</span>
                 </Link>
-                <Link className="navigation-links1-text2">
+                <Link className="navigation-links1-text2" to="/">
                   <span>Log Out</span>
                 </Link>
               </nav>
           
            
-          </div>
+          
 		  <Link to="/cart">
           <svg viewBox="0 0 1024 1024" className="home-icon">
             <path
@@ -44,10 +44,9 @@ const NavigationLinks1 = (props) => {
             ></path>
           </svg>
 		  </Link>
+		  </div>
         </header>
-				<footer className="home-footer">
-          <span className="home-text22">© 2022, Pass It ON</span>
-        </footer>
+				
 		</div>
 
   )

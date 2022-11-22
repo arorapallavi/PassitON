@@ -59,7 +59,7 @@ const Signup = () => {
                 Semester: "",
                 Branch: "",
                 Campus:"" ,
-                Password:"" 
+                Password:""  
     
             })
 			

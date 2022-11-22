@@ -31,10 +31,23 @@ module.exports = router ;
 router.get('/cart/:id',async(req,res) =>{
 	let books;
 	try{
-		bookModel.findById(id).project({'name':1,'author':1,'costprice':1,'sellingprice':1,'image':1})then(foundbook=>res.json(foundbook));
+		bookModel.findById(id).project({'name':1,'author':1,'costprice':1,'sellingprice':1,'image':1}).then(foundbook=>res.json(foundbook));
 	
 	}
 	catch(error){
 	console.log(error);
+	}
+})
+
+//delete book by id
+router.delete('/delete/:id', async(req,res)=>{
+	const id = req.params.id;
+	try{
+		await cartModel.findByIdAndDelete(id).then(()=> {
+		var redir = { redirect: "/" };
+			return res.json(redir);		})
+	}catch(error)
+	{
+		console.log(error);
 	}
 })

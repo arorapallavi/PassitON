@@ -3,6 +3,7 @@ import "./uploadform.css";
 import {useState} from "react"
 import axios from 'axios'
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 function Uploadform(){
 	
 	const [Data,setData] = useState(
@@ -55,7 +56,7 @@ function Uploadform(){
           <span className="home-text">Upload Book Details</span>
           <label className="home-text01">Book Name :&nbsp;</label>
           <textarea
-            placeholder="placeholder"
+            placeholder="name of book"
             className="home-textarea textarea"
 			name="name"
 			value = {Data.name}
@@ -74,7 +75,7 @@ function Uploadform(){
           />
           <label className="home-text03">Author :&nbsp;</label>
           <textarea
-            placeholder="placeholder"
+            placeholder="author"
             className="home-textarea1 textarea"
 			name="author"
 			value = {Data.author}
@@ -84,7 +85,7 @@ function Uploadform(){
             <span className="home-text05">Publisher :&nbsp;</span>
          </label>
           <textarea
-            placeholder="placeholder"
+            placeholder="publisher"
             className="home-textarea2 textarea"
 			name="publisher"
 			value = {Data.publisher}
@@ -115,7 +116,7 @@ function Uploadform(){
           </label>
           <input
             type="text"
-            placeholder="placeholder"
+            placeholder="cost price"
             className="home-textinput1 input"
 			name="costprice"
 			value = {Data.costprice}
@@ -124,7 +125,7 @@ function Uploadform(){
           <label className="home-text15">Selling Price :&nbsp;</label>
           <input
             type="text"
-            placeholder="placeholder"
+            placeholder="sellingprice"
             className="home-textinput2 input"
 			name="sellingprice"
 			value = {Data.sellingprice}
@@ -135,7 +136,7 @@ function Uploadform(){
           </label>
           <input
             type="text"
-            placeholder="placeholder"
+            placeholder="isbn number"
             className="home-textinput3 input"
 			name="isbn"
 			value = {Data.isbn}
@@ -147,7 +148,7 @@ function Uploadform(){
           </label>
           <input
             type="text"
-            placeholder="placeholder"
+            placeholder="enter image url"
             className="home-input input"
 			name="image"
 			value = {Data.image}
@@ -165,6 +166,7 @@ function Uploadbook()
 	<div>
 	<Navbar/>
 	<Uploadform/>
+	<Footer/>
 	</div>
 	);
 }

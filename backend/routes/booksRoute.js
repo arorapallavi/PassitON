@@ -64,18 +64,19 @@ router.put('/update/:id', async(req,res)=>{
 })
 
 //delete book by id
+/*
 router.delete('/delete/:id', async(req,res)=>{
 	const id = req.params.id;
 	try{
 		await bookModel.findByIdAndDelete(id).then(()=> {
-			res.status(201).json({message:"data deleted"});
-		})
+		var redir = { redirect: "/" };
+			return res.json(redir);		})
 	}catch(error)
 	{
 		console.log(error);
 	}
 })
-
+*/
 
 router.get('/search', async (req, res, next) => {
   // We look for a query parameter "search"

@@ -3,8 +3,11 @@ import {useState}from "react"
 import {useEffect} from "react"
 import axios from 'axios'
 import {Container,Row,Col} from 'react-bootstrap';
+import CardGroup from "react-bootstrap/CardGroup";
 import BookCard from '../components/card'
-const Displaybook = () =>{
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+const Displayall = () =>{
 	const [Data,setData] = useState([
 	{
 	name: "",
@@ -30,14 +33,17 @@ const Displaybook = () =>{
 	
 	return(
 		<>
-		<Container>
-		<Row>
+		<Container style={{ top: '131px',  left: '186px',  width: '1120px',  height: '796px',position:'absolute'}}>
 		
+		<Row lg={3}>
 		{Data.map((book)=>(
-		<Col md={4}>
-			<BookCard book={book}/>
+		
+			<Col className="d-flex">
+			<BookCard className="flex-fill" book={book} />
 			</Col>
+			
 		))}
+		
 		</Row>
 		</Container>
 		
@@ -45,5 +51,16 @@ const Displaybook = () =>{
 		</>
 	);
 };
+
+function Displaybook()
+{
+	return(
+	<div style={{  marginBottom: '50px'}}>
+	<Navbar/>
+	<Displayall/>
+	<Footer/>
+	</div>
+	);
+}
 
 export default Displaybook;

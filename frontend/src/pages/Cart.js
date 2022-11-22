@@ -5,7 +5,11 @@ import axios from 'axios'
 import {Container,Row,Col} from 'react-bootstrap';
 import BookCard from '../components/card'
 import ItemCard from '../components/cartcard'
-const Cart = () =>{
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import {Link} from "react-router-dom";
+
+const Cartdisplay = () =>{
 	const [Data,setData] = useState([
 	{
 	name: "",
@@ -27,7 +31,8 @@ const Cart = () =>{
 	
 	return(
 		<>
-		<Container>
+		<Container style={{ top: '131px',  left: '186px',  width: '1120px',  height: '796px',position:'absolute'}}>
+		<h2> Items inside Cart : </h2>
 		<Row>
 		
 		{Data.map((item)=>(
@@ -37,10 +42,22 @@ const Cart = () =>{
 		))}
 		</Row>
 		</Container>
-		
+
+		<Link to='/end'><button style={{left: '1000px',color: '#3C6E71',bottom: '150px', position: 'absolute',fontWeight: 'bold', fontSize:'20px',    backgroundColor: '#FFFFFF'}}> Place Order </button></Link>
 			
 		</>
 	);
 };
+
+function Cart()
+{
+	return(
+	<div>
+	<Navbar/>
+	<Cartdisplay/>
+	<Footer/>
+	</div>
+	);
+}
 
 export default Cart;

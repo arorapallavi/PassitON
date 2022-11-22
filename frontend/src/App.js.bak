@@ -8,7 +8,7 @@ import Home from './pages/Home';
 import Login from './pages/login';	
 import Signup from './pages/signup';
 import BookDet from './pages/Book_details';
-
+import End from './pages/End';
 import Cart from './pages/Cart';
 import {
   BrowserRouter as Router,   
@@ -29,8 +29,8 @@ function App() {
 		<Route path="/uploadbook" element={<Uploadbook/>} />
 		<Route path="/display" element={<Displaybook/>}/>
 		<Route path="/display/book/:id" element={<BookDet/>}/>
-		<Route path="/cart" element={Cart/>}
-		book/>} />		
+		<Route path="/cart" element={<Cart/>} />	
+		<Route path="/end" element={<End/>}		
 		
 	</Routes>
   </Router>

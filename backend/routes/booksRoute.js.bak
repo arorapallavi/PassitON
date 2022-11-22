@@ -33,6 +33,7 @@ router.get('/display', (req,res) => {
 
 router.get('/display/:id',async(req,res) =>{
 	let books;
+	const id=req.params.id;
 	try{
 		bookModel.findById(id).then(foundbook=>res.json(foundbook));
 	
@@ -67,8 +68,8 @@ router.delete('/delete/:id', async(req,res)=>{
 	const id = req.params.id;
 	try{
 		await bookModel.findByIdAndDelete(id).then(()=> {
-			res.status(201).json({message:"data deleted"});
-		})
+		var redir = { redirect: "/" };
+			return res.json(redir);		})
 	}catch(error)
 	{
 		console.log(error);

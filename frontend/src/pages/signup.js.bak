@@ -45,8 +45,8 @@ const Signup = () => {
              .then(function (response) {
             if (response.data.redirect == '/') {
                 window.location = "/display"
-            } else if (response.data.redirect == '/login'){
-                window.location = "/login"
+            } else if (response.data.redirect == '/signup'){
+                window.location = "/signup"
             }
         })
         .catch(function(error) {

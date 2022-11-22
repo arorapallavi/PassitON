@@ -38,3 +38,16 @@ router.get('/cart/:id',async(req,res) =>{
 	console.log(error);
 	}
 })
+
+//delete item by id
+router.delete('/delete/:id', async(req,res)=>{
+	const id = req.params.id;
+	try{
+		await cartModel.findByIdAndDelete(id).then(()=> {
+		var redir = { redirect: "/" };
+			return res.json(redir);		})
+	}catch(error)
+	{
+		console.log(error);
+	}
+})

@@ -9,10 +9,11 @@ import {Card,Button,Row,Col} from 'react-bootstrap'
 
 const BookCard = ({book}) => {
   return (
-  <Row style={{display:"flex"}}>
-  <Col md={4}>
-<Card style={{ width: '18rem' ,marginTop:"10px"}}>
-      <Card.Img variant="top" src={book.image} />
+ 
+          <Card className="flex-fill" key={book._id} >
+ 
+
+      <Card.Img variant="top" src={book.image} style={{width:'150px' ,height:'150px'}}/>
       <Card.Body>
         <Card.Title>{book.name}</Card.Title>
         <Card.Text>
@@ -20,11 +21,9 @@ const BookCard = ({book}) => {
           Author : {book.author}
 		
 		</Card.Text>
-        <Link to={'/' + book._id} ><Button variant="primary">View</Button></Link>
+        <Link to={'book/' + book._id} ><Button variant="primary">View</Button></Link>
       </Card.Body>
     </Card>
-	</Col>
-	</Row>
   )
 }
 
