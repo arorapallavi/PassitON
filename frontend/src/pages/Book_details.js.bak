@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 import "./Book_details.css";
 import axios from 'axios'
 import Navbar from "../components/Navbar";
-import Footer from "../components/Navbar";
+
 let bookImage = require('./book_demo.jpg')
 const BookDetail = () =>{
 	var bid=useParams().id
@@ -26,7 +26,7 @@ const [Data,setData] = useState([
 	
 	
 			
-			
+			console.log("in use effect")
 		console.log(bid)
 		fetch(`http://localhost:4000/api/display/${bid}`).then(res=>{
 			if(res.ok){
@@ -46,18 +46,31 @@ const [Data,setData] = useState([
 				alert("Book added to cart")
                 window.location = "/display"
             }
-			else
-			{
-			alert("Book already in cart")	
-			}
             
         })
         .catch(function(error) {
-			
+			alert("Book exists in cart")
            console.log(error)
         })
 	}
 	
+	/*
+	const del = async(e)=>{
+		e.preventDefault();
+		 await axios
+		 .delete(`http://localhost:4000/api/delete/${bid}`,Data)
+		 .then(function (response) {
+           if (response.data.redirect == '/') {
+                window.location = "/display"
+            }
+            
+            
+        })
+        .catch(function(error) {
+           console.log(error)
+        })
+	}
+	*/
     return(
         <div>
 	
@@ -69,9 +82,9 @@ const [Data,setData] = useState([
             <div className = "info">
 
 
-                <p>Name: <b>{Data.name}</b></p>
-                <p>Edition : {Data.edition} </p>
-                <p>Author: {Data.author}</p>
+                <p>Name: {Data.name}</p>
+                <p>Edition:{Data.edition} </p>
+                <p>Author:{Data.author}</p>
                 <p>Condition:{Data.condition}</p>
                 <p>Semester: {Data.semester}</p>
 				<p>Cost Price : {Data.costprice}</p>
@@ -91,7 +104,6 @@ function BookDet()
 	<div>
 	<Navbar/>
 	<BookDetail/>
-	<Footer/>
 	</div>
 	);
 }

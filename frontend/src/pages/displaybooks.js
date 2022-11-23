@@ -33,12 +33,12 @@ const Displayall = () =>{
 	
 	return(
 		<>
-		<Container style={{ top: '131px',  left: '186px',  width: '1120px',  height: '796px',position:'absolute'}}>
+		<Container style={{ top: '131px',  left: '186px',  width: '1120px',  height: '796px',position:'absolute',display:'grid',gridTemplateColumns: 'auto auto auto',padding:'10px'}}>
 		
 		<Row sm="3">
 		{Data.map((book)=>(
 		
-			<Col className="d-flex" >
+			<Col style={{backgroundColor: '#CAE250', border: '1px solid rgba(0, 0, 0, 0.8)', padding: '20px', fontSize: '30px', textAlign: 'center'}}>
 			<BookCard className="flex-fill" book={book} />
 			</Col>
 			

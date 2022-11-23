@@ -43,11 +43,18 @@ const [Data,setData] = useState([
 		 .post("http://localhost:4000/api/addtocart",Data)
 		 .then(function (response) {
             if (response.data.redirect == '/') {
+				alert("Book added to cart")
                 window.location = "/display"
             }
+			else
+			{
+				alert("Book exists in cart")
+				window.location = "/display"
+			}
             
         })
         .catch(function(error) {
+			alert("Book exists in cart")
            console.log(error)
         })
 	}
