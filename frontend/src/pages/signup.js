@@ -44,8 +44,10 @@ const Signup = () => {
              .post("http://localhost:4000/api/signup",Data)
              .then(function (response) {
             if (response.data.redirect == '/') {
+                alert("Signup successful")
                 window.location = "/display"
             } else if (response.data.redirect == '/signup'){
+                alert("Signup not successful")
                 window.location = "/signup"
             }
         })
@@ -75,13 +77,13 @@ const Signup = () => {
                 <div>
              
                      <h2 style = {{color:'#353535',fontSize:80,fontFamily: 'cursive',textAlign:'left',marginBottom: 0,}}>Sign Up</h2>
-                     <img className="img1" src = {logo} />
+                     <img className="img1" src = {logo} align="right"/>
                     <hr/>
             
                 <div style = {{color:"#353535", fontFamily: "cursive" ,fontSize: "large",marginLeft: 100,marginTop:20}}>
 
                     <img className = "img4" align="right" src ={img4}/>
-                    <form method="POST" action="http://localhost:3000/login">
+                    <form >
                     <h4>Name:<br/><input type = "textbox" className="tb2" name="Name" value = {Data.Name} onChange={change}/></h4>
                     <h4>Institution mail:<br/><input type ="email" pattern={"[0-9 A-Z a-z _ . @]+[.edu]"} className="tb2" name = "mailid" value = {Data.mailid} onChange = {change} required/></h4>
                     <h4>Semester:<br/><input type = "textbox" className="tb2" name="Semester" value = {Data.Semester} onChange={change}/></h4>

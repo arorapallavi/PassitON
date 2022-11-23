@@ -38,7 +38,7 @@ const Displayall = () =>{
 		<Row sm="3">
 		{Data.map((book)=>(
 		
-			<Col className="d-flex">
+			<Col className="d-flex" >
 			<BookCard className="flex-fill" book={book} />
 			</Col>
 			

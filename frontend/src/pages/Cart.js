@@ -8,7 +8,7 @@ import ItemCard from '../components/cartcard'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {Link} from "react-router-dom";
-
+import './Cart.css'
 const Cartdisplay = () =>{
 	const [Data,setData] = useState([
 	{
@@ -43,7 +43,7 @@ const Cartdisplay = () =>{
 		</Row>
 		</Container>
 
-		<Link to='/end'><button style={{left: '1000px',color: '#3C6E71',bottom: '150px', position: 'absolute',fontWeight: 'bold', fontSize:'20px',    backgroundColor: '#FFFFFF'}}> Place Order </button></Link>
+		<Link to='/end'><button style={{left: '1000px',color: '#3C6E71',bottom: '150px', position: 'absolute',fontWeight: 'bold', fontSize:'20px',    backgroundColor: '#FFFFFF'}} className="b2"> Place Order </button></Link>
 			
 		</>
 	);

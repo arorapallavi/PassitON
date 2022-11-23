@@ -35,10 +35,10 @@ const Displayall = () =>{
 		<>
 		<Container style={{ top: '131px',  left: '186px',  width: '1120px',  height: '796px',position:'absolute'}}>
 		
-		<Row lg={3}>
+		<Row sm="3">
 		{Data.map((book)=>(
 		
-			<Col className="d-flex">
+			<Col className="d-flex" style={{position:'relative'}}>
 			<BookCard className="flex-fill" book={book} />
 			</Col>
 			

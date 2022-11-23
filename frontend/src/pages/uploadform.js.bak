@@ -16,10 +16,13 @@ function Uploadform(){
     sellingprice:0,
     image: ""
 		})
+		  const [findsem, setSearchTerms] = useState("")
+
+
+		
 		const change=(e)=>
 		{
-			const {name,value}=e.target
-			setData({...Data,[name]:value})
+			setSearchTerms(e.currentTarget.value)
 		}
 	
 	const submit = async(e)=>{
@@ -56,7 +59,7 @@ function Uploadform(){
           <span className="home-text">Upload Book Details</span>
           <label className="home-text01">Book Name :&nbsp;</label>
           <textarea
-            placeholder="placeholder"
+            placeholder="name of book"
             className="home-textarea textarea"
 			name="name"
 			value = {Data.name}

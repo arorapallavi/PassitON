@@ -8,9 +8,8 @@ import ItemCard from '../components/cartcard'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {Link} from "react-router-dom";
-
+import './Cart.css'
 const Cartdisplay = () =>{
-	bid={item._id}
 	const [Data,setData] = useState([
 	{
 	name: "",

@@ -12,7 +12,7 @@ const logo = require('./passitonlogo.png')
 const NavigationLinks1 = (props) => {
   return (
   
-      <div className="home-container">
+      <div className="home-container" stye={{ fontSize:'90px'}}>
         <header data-role="Header" className="home-header">
           <img
              src={logo}
@@ -36,7 +36,7 @@ const NavigationLinks1 = (props) => {
               </nav>
           
            
-          
+          </div>
 		  <Link to="/cart">
           <svg viewBox="0 0 1024 1024" className="home-icon">
             <path
@@ -44,7 +44,6 @@ const NavigationLinks1 = (props) => {
             ></path>
           </svg>
 		  </Link>
-		  </div>
         </header>
 				
 		</div>

@@ -325,13 +325,31 @@
   bottom: 111px;
   position: absolute;
 }
+/*
+.home-footer {
+  
+height:52px;
+  background-color: #353535;
+  bottom:0px;
+  position:fixed;
+  
+}
+.home-text22 {
+  color: #D9D9D9;
+right: 50px;
+  
+    position: absolute;
+
+}
+*/
+
 .home-footer {
   left: 0px;
   width: 100%;
-  
-  
+  position:fixed
+  bottom:0px;
   display: flex;
-	height:50px;
+	height:52px;
 margin-top: 10px;
   align-items: center;
   padding-top: 5px;

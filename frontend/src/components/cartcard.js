@@ -35,11 +35,14 @@ const CartCard = ({item}) => {
 		 .delete(`http://localhost:4000/api/delete/${bid}`)
 		 .then(function (response) {
            if (response.data.redirect == '/') {
+				alert("Book has been deleted from cart")
                 window.location = "/cart"
             }
+            else if (response.data.redirect == '/cart'){
+				alert("Book could not be deleted from cart")
+				window.location = "/cart"
             
-            
-        })
+        }})
         .catch(function(error) {
            console.log(error)
         })
@@ -49,19 +52,20 @@ const CartCard = ({item}) => {
   return (
   <Row >
   <Col md={4}>
-<Card style={{ width: '18rem' ,marginTop:"10px"}}>
-      <Card.Img   variant="top" src={item.image} style={{paddingBottom: '20px' ,width:'150px' ,float:'left' ,height:'150px'}}/>
+<Card style={{ width: '45rem' ,marginTop:"10px"}}>
+      <Card.Img   variant="top" src={item.image} style={{paddingBottom: '40px' ,width:'170px' ,float:'left' ,height:'210px'}}/>
       <Card.Body style={{paddingBottom: '40px',left:'40px' , position:'relative' }}>
-        <Card.Title>{item.name}</Card.Title>
-        <Card.Text>
+        <b><Card.Title style={{ fontSize:'30px', color:'#284B63'}}>{item.name}</Card.Title></b>
+        <Card.Text style={{ fontSize:'20px', color:'#3C6E71'}}>
 		
           Author : {item.author}
 			<br/>
 		Cost Price : {item.costprice}
 		<br/>
 		Selling Price : {item.sellingprice}
-					<br/><button onClick={del} className="btn3"> Delete </button>
-
+		<br/>
+		<button onClick={del} className="b1"> Delete </button>
+	<br/>
 		</Card.Text>
         
       </Card.Body>

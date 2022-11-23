@@ -8,11 +8,13 @@ router.post('/addtocart',async(req,res)=>{
 		const data = req.body;
 		const newitem = new cartModel(data);
 		await newitem.save().then(()=>{
-			res.status(200).json({message:"Item added"});
+			var redir = { redirect: "/" };
+			return res.json(redir);
 		});
 		
- 	}catch(error){
-		console.log(error);
+	}catch(error){
+		var redir = { redirect: '/uploadbook'};
+        return res.json(redir);
 	}
 })
 

@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar";
 import Uploadbook from "./pages/uploadform.js";
 import Searchbook from "./pages/searchbook.js";
+import Searchingbook from "./pages/searchingbook.js";
 import Displaybook from "./pages/displaybooks.js";
 import Home from './pages/Home';
 import Login from './pages/login';	
@@ -26,6 +27,8 @@ function App() {
           <Route path = "/login" element = {<Login />}/>
           <Route path = "/signup" element = {<Signup />} />
 		<Route path="/searchbook" element={<Searchbook/>} />
+		<Route path="/searchbook/searchres/:id" element={<Searchingbook/>} />
+		
 		<Route path="/uploadbook" element={<Uploadbook/>} />
 		<Route path="/display" element={<Displaybook/>}/>
 		<Route path="/display/book/:id" element={<BookDet/>}/>

@@ -2,14 +2,14 @@ import React from 'react';
 import './login.css';
 import {Link} from "react-router-dom";
 import axios from 'axios' ;
-import { useNavigate } from 'react-router-dom';
+
 
 import {useState} from "react"
 const img1 = require('./pass_it_on.jpeg')
 const img2 = require('./img2.jpg')
 
 const Login = () => {
-	const navigate = useNavigate();
+
       	const [Data,setData] = useState( { 	Name: "",   Password:"" })
 		const change=(e)=>
 		{
@@ -24,8 +24,11 @@ const Login = () => {
              .post("http://localhost:4000/api/login",Data)
              .then(function (response) {
             if (response.data.redirect == '/') {
+                alert("Login successful")
                 window.location = "/display"
+
             } else if (response.data.redirect == '/login'){
+                alert("Invalid password")
                 window.location = "/login"
             }
         })
@@ -45,7 +48,7 @@ const Login = () => {
         return(
                 <div>
                          <h2 style = {{color:'#353535',fontSize:80,fontFamily: 'cursive',textAlign:'left',marginBottom: 0,}}>Log In</h2>
-                         <img className="img1" src = {img1} />
+                         <img className="img1" src = {img1} align="right"/>
                          <hr/>
                         <div style = {{backgroundColor:"#d9d9d9",marginLeft: 100}}>
                         <img className = "img2" align="right" src ={img2}/>

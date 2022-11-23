@@ -7,7 +7,7 @@ const Home = () => {
         return(
                 <div className = "bg">
                          <h1 style = {{color:'#353535',fontSize:80,fontFamily: "cursive",textAlign: "left",marginBottom: 0}}>Pass It On</h1>
-                         <img className="img1" src = {logo} />
+                         <img className="img1" src = {logo} align="right"/>
                          <hr/>
                         <div style = {{fontSize: 60,fontFamily: "cursive",marginLeft: 150}}>
                             <p style={{marginBottom: 5}}>

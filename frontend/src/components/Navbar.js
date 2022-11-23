@@ -12,7 +12,7 @@ const logo = require('./passitonlogo.png')
 const NavigationLinks1 = (props) => {
   return (
   
-      <div className="home-container">
+      <div className="home-container" >
         <header data-role="Header" className="home-header">
           <img
              src={logo}

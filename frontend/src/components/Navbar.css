@@ -328,11 +328,11 @@
 .home-footer {
   left: 0px;
   width: 100%;
-  
-  
+  bottom: 0px;
+  position: fixed;
   display: flex;
 	height:52px;
-margin-top: 10px;
+  margin-top: 10px;
   align-items: center;
   padding-top: 5px;
   padding-left: 0px;
