@@ -28,7 +28,7 @@ function App() {
           <Route path = "/signup" element = {<Signup />} />
 		<Route path="/searchbook" element={<Searchbook/>} />
 		<Route path="/searchbook/searchres/:id" element={<Searchingbook/>} />
-		
+		<Route path="/searchbook/searchres/:sem/book/:id" element={<BookDet/>}/>
 		<Route path="/uploadbook" element={<Uploadbook/>} />
 		<Route path="/display" element={<Displaybook/>}/>
 		<Route path="/display/book/:id" element={<BookDet/>}/>

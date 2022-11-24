@@ -8,11 +8,13 @@ router.post('/addtocart',async(req,res)=>{
 		const data = req.body;
 		const newitem = new cartModel(data);
 		await newitem.save().then(()=>{
-			res.status(200).json({message:"Item added"});
+			var redir = { redirect: "/" };
+			return res.json(redir);
 		});
 		
- 	}catch(error){
-		console.log(error);
+	}catch(error){
+		var redir = { redirect: '/uploadbook'};
+        return res.json(redir);
 	}
 })
 
@@ -26,7 +28,17 @@ router.get('/cart', (req,res) => {
 	console.log(error);
 	}
 })
-module.exports = router ;
+
+router.get('/cart/no', (req,res) => {
+	try{
+		cartModel.find().then(founditems=>res.json(founditems));
+	
+	}
+	catch(error){
+	console.log(error);
+	}
+})
+
 
 router.get('/cart/:id',async(req,res) =>{
 	let books;
@@ -39,7 +51,7 @@ router.get('/cart/:id',async(req,res) =>{
 	}
 })
 
-//delete book by id
+//delete item by id
 router.delete('/delete/:id', async(req,res)=>{
 	const id = req.params.id;
 	try{
@@ -51,3 +63,5 @@ router.delete('/delete/:id', async(req,res)=>{
 		console.log(error);
 	}
 })
+
+module.exports = router ;

@@ -3,16 +3,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import './Navbar.css'
-
+import {useState} from "react"
+import {useEffect} from "react"
 import {Link} from "react-router-dom";
-
+import axios from 'axios'
 const logo = require('./passitonlogo.png')
 
 
+
 const NavigationLinks1 = (props) => {
+	const [no, setno] = useState("")
+	
+	
+	fetch("http://localhost:4000/api/cart/no").then(res=>{
+			if(res.ok){
+				return res.json()
+			}
+		}).then(jsonRes=>setno(jsonRes));
+	
+	console.log(no)
+		
   return (
   
-      <div className="home-container" stye={{ fontSize:'90px'}}>
+      <div className="home-container" >
         <header data-role="Header" className="home-header">
           <img
              src={logo}
@@ -37,6 +50,8 @@ const NavigationLinks1 = (props) => {
           
            
           </div>
+		  
+		  <span className="navigation-links1-text3">{no}</span>
 		  <Link to="/cart">
           <svg viewBox="0 0 1024 1024" className="home-icon">
             <path

@@ -43,9 +43,9 @@ router.get('/display/:id',async(req,res) =>{
 	}
 })
 
-router.get('/searchres/:id',async(req,res) =>{
+router.get('/searchres/:sem',async(req,res) =>{
 	let books;
-	const findsem=req.params.id;
+	const findsem=req.params.sem;
 	
 	try{
 		bookModel.find({semester:findsem},{'name':1,'author':1,'image':1}).then(foundbooks=>res.json(foundbooks));
@@ -56,6 +56,9 @@ router.get('/searchres/:id',async(req,res) =>{
 	
 
 })
+
+
+
 
 //update books by id
 

@@ -28,7 +28,17 @@ router.get('/cart', (req,res) => {
 	console.log(error);
 	}
 })
-module.exports = router ;
+
+router.get('/cart/no', (req,res) => {
+	try{
+		cartModel.find().then(founditems=>res.json(founditems.length));
+	
+	}
+	catch(error){
+	console.log(error);
+	}
+})
+
 
 router.get('/cart/:id',async(req,res) =>{
 	let books;
@@ -53,3 +63,5 @@ router.delete('/delete/:id', async(req,res)=>{
 		console.log(error);
 	}
 })
+
+module.exports = router ;

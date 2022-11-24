@@ -165,6 +165,15 @@
   border: 2px dashed rgba(120, 120, 120, 0.4);
   display: flex;
 }
+
+.cartno {
+  color: #CAE250;
+  right: 150px;
+  bottom:63px;
+  font-size:20px;
+  position:absolute;
+}
+
 .home-icon {
   fill: #CAE250;
   right: 118px;

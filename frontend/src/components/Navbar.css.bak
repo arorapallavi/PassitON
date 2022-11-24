@@ -165,6 +165,15 @@
   border: 2px dashed rgba(120, 120, 120, 0.4);
   display: flex;
 }
+
+.cartno {
+  color: #CAE250;
+  right: 150px;
+  bottom:60px;
+  font-size:20px;
+  position:absolute;
+}
+
 .home-icon {
   fill: #CAE250;
   right: 118px;
@@ -325,32 +334,14 @@
   bottom: 111px;
   position: absolute;
 }
-/*
-.home-footer {
-  
-height:52px;
-  background-color: #353535;
-  bottom:0px;
-  position:fixed;
-  
-}
-.home-text22 {
-  color: #D9D9D9;
-right: 50px;
-  
-    position: absolute;
-
-}
-*/
-
 .home-footer {
   left: 0px;
   width: 100%;
-  position:fixed
-  bottom:0px;
+  bottom: 0px;
+  position: fixed;
   display: flex;
 	height:52px;
-margin-top: 10px;
+  margin-top: 10px;
   align-items: center;
   padding-top: 5px;
   padding-left: 0px;
