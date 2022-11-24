@@ -51,7 +51,7 @@ const NavigationLinks1 = (props) => {
            
           </div>
 		  
-		  <span className="cartno">{no}</span>
+		  <b><span className="cartno">{no}</span></b>
 		  <Link to="/cart">
           <svg viewBox="0 0 1024 1024" className="home-icon">
             <path
